@@ -1,0 +1,113 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-cp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDBA74"/>
+      <stop offset="50%" stop-color="#FDA4AF"/>
+      <stop offset="100%" stop-color="#FECDD3"/>
+    </linearGradient>
+    <linearGradient id="card-cp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFBF7" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#FFF1F2" stop-opacity="0.90"/>
+    </linearGradient>
+    <linearGradient id="card2-cp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFBF7" stop-opacity="0.94"/>
+      <stop offset="100%" stop-color="#FEF9EE" stop-opacity="0.88"/>
+    </linearGradient>
+    <filter id="shadow-cp">
+      <feDropShadow dx="0" dy="8" stdDeviation="18" flood-color="#C05A3F" flood-opacity="0.10"/>
+    </filter>
+    <filter id="shadow-cp2">
+      <feDropShadow dx="0" dy="4" stdDeviation="10" flood-color="#C05A3F" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg-cp)"/>
+
+  <!-- Scattered ingredient dots -->
+  <circle cx="72" cy="100" r="18" fill="#FB923C" opacity="0.25"/>
+  <circle cx="55" cy="160" r="10" fill="#F59E0B" opacity="0.20"/>
+  <circle cx="730" cy="380" r="22" fill="#E07A5F" opacity="0.18"/>
+  <circle cx="758" cy="320" r="12" fill="#FDBA74" opacity="0.22"/>
+  <circle cx="720" cy="80" r="8" fill="#FB923C" opacity="0.20"/>
+  <circle cx="90" cy="390" r="14" fill="#FDA4AF" opacity="0.30"/>
+
+  <!-- Left: Recipe card -->
+  <rect x="72" y="70" width="310" height="360" rx="18" fill="url(#card-cp)" filter="url(#shadow-cp)"/>
+
+  <!-- Recipe image area -->
+  <rect x="72" y="70" width="310" height="155" rx="18" fill="#FDBA74" opacity="0.45"/>
+  <rect x="72" y="195" width="310" height="30" fill="#FDBA74" opacity="0.2"/>
+  <!-- Bowl illustration inside image area -->
+  <ellipse cx="227" cy="150" rx="55" ry="16" fill="#E07A5F" opacity="0.25"/>
+  <path d="M172 120 Q172 168 227 168 Q282 168 282 120 Z" fill="#FB923C" opacity="0.35"/>
+  <ellipse cx="227" cy="120" rx="55" ry="14" fill="#FDBA74" opacity="0.5"/>
+  <!-- Steam lines -->
+  <path d="M210 108 Q206 98 210 88 Q214 78 210 68" stroke="#E07A5F" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4"/>
+  <path d="M227 105 Q223 95 227 85 Q231 75 227 65" stroke="#E07A5F" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4"/>
+  <path d="M244 108 Q240 98 244 88 Q248 78 244 68" stroke="#E07A5F" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.4"/>
+
+  <!-- Recipe title -->
+  <rect x="96" y="238" width="180" height="12" rx="6" fill="#92400E" opacity="0.5"/>
+  <rect x="96" y="258" width="130" height="8" rx="4" fill="#92400E" opacity="0.25"/>
+
+  <!-- Ingredients list -->
+  <text x="96" y="292" font-family="Georgia" font-size="9" fill="#92400E" opacity="0.45" letter-spacing="0.8">INGREDIENTS</text>
+  <!-- Items -->
+  <circle cx="104" cy="310" r="3.5" fill="#E07A5F" opacity="0.6"/>
+  <rect x="116" y="305" width="110" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+  <circle cx="104" cy="328" r="3.5" fill="#F59E0B" opacity="0.6"/>
+  <rect x="116" y="323" width="140" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+  <circle cx="104" cy="346" r="3.5" fill="#E07A5F" opacity="0.6"/>
+  <rect x="116" y="341" width="90" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+  <circle cx="104" cy="364" r="3.5" fill="#F59E0B" opacity="0.6"/>
+  <rect x="116" y="359" width="120" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+  <circle cx="104" cy="382" r="3.5" fill="#FB923C" opacity="0.6"/>
+  <rect x="116" y="377" width="100" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+
+  <!-- Servings badge -->
+  <rect x="246" y="290" width="112" height="28" rx="14" fill="#FEF3C7" opacity="0.9"/>
+  <text x="302" y="309" font-family="Georgia, serif" font-size="11" fill="#D97706" text-anchor="middle" font-weight="600">4 servings</text>
+
+  <!-- Right: Grocery list card -->
+  <rect x="418" y="70" width="310" height="360" rx="18" fill="url(#card2-cp)" filter="url(#shadow-cp)"/>
+
+  <!-- Header -->
+  <rect x="418" y="70" width="310" height="60" rx="18" fill="#FEF9EE" opacity="0.95"/>
+  <rect x="418" y="108" width="310" height="22" fill="#FEF9EE" opacity="0.95"/>
+  <text x="444" y="93" font-family="Georgia, serif" font-size="14" fill="#E07A5F" font-weight="700">Grocery List</text>
+  <rect x="444" y="101" width="80" height="7" rx="3.5" fill="#92400E" opacity="0.18"/>
+
+  <!-- Grocery sections -->
+  <!-- Produce -->
+  <text x="444" y="152" font-family="Georgia" font-size="9" fill="#E07A5F" opacity="0.7" letter-spacing="0.8" font-weight="600">PRODUCE</text>
+  <rect x="444" y="160" width="14" height="14" rx="3" fill="#E07A5F" opacity="0.15"/>
+  <rect x="466" y="162" width="120" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+  <rect x="444" y="180" width="14" height="14" rx="3" fill="#E07A5F" opacity="0.15"/>
+  <rect x="466" y="182" width="90" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+  <!-- checked -->
+  <rect x="444" y="200" width="14" height="14" rx="3" fill="#E07A5F" opacity="0.5"/>
+  <path d="M447 207 L451 211 L457 204" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <rect x="466" y="202" width="100" height="8" rx="4" fill="#92400E" opacity="0.14"/>
+  <line x1="466" y1="206" x2="566" y2="206" stroke="#92400E" stroke-width="1" opacity="0.3"/>
+
+  <!-- Dairy -->
+  <text x="444" y="232" font-family="Georgia" font-size="9" fill="#F59E0B" opacity="0.7" letter-spacing="0.8" font-weight="600">DAIRY</text>
+  <rect x="444" y="240" width="14" height="14" rx="3" fill="#F59E0B" opacity="0.15"/>
+  <rect x="466" y="242" width="130" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+  <rect x="444" y="260" width="14" height="14" rx="3" fill="#F59E0B" opacity="0.15"/>
+  <rect x="466" y="262" width="80" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+
+  <!-- Pantry -->
+  <text x="444" y="292" font-family="Georgia" font-size="9" fill="#FB923C" opacity="0.7" letter-spacing="0.8" font-weight="600">PANTRY</text>
+  <rect x="444" y="300" width="14" height="14" rx="3" fill="#FB923C" opacity="0.15"/>
+  <rect x="466" y="302" width="110" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+  <rect x="444" y="320" width="14" height="14" rx="3" fill="#FB923C" opacity="0.15"/>
+  <rect x="466" y="322" width="150" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+  <rect x="444" y="340" width="14" height="14" rx="3" fill="#FB923C" opacity="0.15"/>
+  <rect x="466" y="342" width="95" height="8" rx="4" fill="#92400E" opacity="0.22"/>
+
+  <!-- Add to list button -->
+  <rect x="444" y="372" width="256" height="38" rx="12" fill="#E07A5F" opacity="0.85"/>
+  <text x="572" y="396" font-family="Georgia, serif" font-size="13" fill="white" text-anchor="middle" font-weight="600">Add to Grocery List</text>
+</svg>

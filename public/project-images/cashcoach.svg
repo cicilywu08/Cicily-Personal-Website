@@ -1,0 +1,104 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-cc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="45%" stop-color="#FDBA74"/>
+      <stop offset="100%" stop-color="#E07A5F"/>
+    </linearGradient>
+    <linearGradient id="card-cc" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FEFCE8" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#FEF3C7" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E07A5F"/>
+      <stop offset="100%" stop-color="#C05A3F" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706" stop-opacity="0.7"/>
+    </linearGradient>
+    <linearGradient id="bar3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FDBA74"/>
+      <stop offset="100%" stop-color="#FB923C" stop-opacity="0.7"/>
+    </linearGradient>
+    <filter id="shadow-cc">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#92400E" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg-cc)"/>
+
+  <!-- Decorative dots -->
+  <circle cx="680" cy="60" r="6" fill="#92400E" opacity="0.18"/>
+  <circle cx="710" cy="90" r="4" fill="#C05A3F" opacity="0.15"/>
+  <circle cx="740" cy="55" r="8" fill="#F59E0B" opacity="0.14"/>
+  <circle cx="760" cy="120" r="5" fill="#92400E" opacity="0.12"/>
+  <circle cx="90" cy="420" r="7" fill="#92400E" opacity="0.12"/>
+  <circle cx="60" cy="380" r="4" fill="#C05A3F" opacity="0.14"/>
+
+  <!-- Main dashboard card -->
+  <rect x="80" y="60" width="620" height="380" rx="20" fill="url(#card-cc)" filter="url(#shadow-cc)"/>
+
+  <!-- Card header -->
+  <rect x="80" y="60" width="620" height="64" rx="20" fill="#FEF9EE" opacity="0.95"/>
+  <rect x="80" y="100" width="620" height="24" fill="#FEF9EE" opacity="0.95"/>
+  <!-- Header text lines -->
+  <rect x="112" y="83" width="110" height="10" rx="5" fill="#92400E" opacity="0.5"/>
+  <rect x="112" y="99" width="70" height="7" rx="3.5" fill="#D97706" opacity="0.35"/>
+  <!-- Header right: total amount -->
+  <rect x="540" y="80" width="120" height="14" rx="7" fill="#E07A5F" opacity="0.4"/>
+  <rect x="580" y="100" width="80" height="8" rx="4" fill="#92400E" opacity="0.2"/>
+
+  <!-- Divider -->
+  <line x1="100" y1="126" x2="680" y2="126" stroke="#E8D5C0" stroke-width="1"/>
+
+  <!-- Left panel: bar chart -->
+  <text x="112" y="155" font-family="Georgia, serif" font-size="11" fill="#92400E" opacity="0.6" font-weight="600" letter-spacing="1">SPENDING BY CATEGORY</text>
+
+  <!-- Bars -->
+  <!-- Dining -->
+  <rect x="112" y="230" width="52" height="100" rx="6" fill="url(#bar1)"/>
+  <rect x="112" y="228" width="52" height="6" rx="3" fill="#E07A5F"/>
+  <text x="138" y="348" font-family="Georgia" font-size="9" fill="#92400E" opacity="0.55" text-anchor="middle">Dining</text>
+  <!-- Travel -->
+  <rect x="180" y="195" width="52" height="135" rx="6" fill="url(#bar2)"/>
+  <rect x="180" y="193" width="52" height="6" rx="3" fill="#F59E0B"/>
+  <text x="206" y="348" font-family="Georgia" font-size="9" fill="#92400E" opacity="0.55" text-anchor="middle">Travel</text>
+  <!-- Groceries -->
+  <rect x="248" y="255" width="52" height="75" rx="6" fill="url(#bar3)"/>
+  <rect x="248" y="253" width="52" height="6" rx="3" fill="#FDBA74"/>
+  <text x="274" y="348" font-family="Georgia" font-size="9" fill="#92400E" opacity="0.55" text-anchor="middle">Grocery</text>
+  <!-- Subscriptions -->
+  <rect x="316" y="275" width="52" height="55" rx="6" fill="url(#bar1)" opacity="0.6"/>
+  <text x="342" y="348" font-family="Georgia" font-size="9" fill="#92400E" opacity="0.55" text-anchor="middle">Subs</text>
+  <!-- Utilities -->
+  <rect x="384" y="290" width="52" height="40" rx="6" fill="url(#bar2)" opacity="0.5"/>
+  <text x="410" y="348" font-family="Georgia" font-size="9" fill="#92400E" opacity="0.55" text-anchor="middle">Utils</text>
+
+  <!-- Right panel: donut chart -->
+  <circle cx="590" cy="235" r="72" fill="none" stroke="#F5E6D8" stroke-width="22"/>
+  <circle cx="590" cy="235" r="72" fill="none" stroke="#E07A5F" stroke-width="22"
+    stroke-dasharray="180 272" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 590 235)"/>
+  <circle cx="590" cy="235" r="72" fill="none" stroke="#F59E0B" stroke-width="22"
+    stroke-dasharray="100 352" stroke-dashoffset="-182" stroke-linecap="round" transform="rotate(-90 590 235)"/>
+  <circle cx="590" cy="235" r="72" fill="none" stroke="#FDBA74" stroke-width="22"
+    stroke-dasharray="60 392" stroke-dashoffset="-284" stroke-linecap="round" transform="rotate(-90 590 235)"/>
+  <!-- Center label -->
+  <text x="590" y="229" font-family="Georgia, serif" font-size="18" fill="#92400E" text-anchor="middle" font-weight="700">$3,240</text>
+  <text x="590" y="245" font-family="Georgia, serif" font-size="9" fill="#92400E" text-anchor="middle" opacity="0.5">this month</text>
+
+  <!-- Bottom stat cards -->
+  <rect x="100" y="368" width="170" height="56" rx="10" fill="#FEF3C7" opacity="0.7"/>
+  <rect x="286" y="368" width="170" height="56" rx="10" fill="#FEF3C7" opacity="0.7"/>
+  <rect x="472" y="368" width="188" height="56" rx="10" fill="#FEF3C7" opacity="0.7"/>
+
+  <text x="116" y="388" font-family="Georgia" font-size="8" fill="#92400E" opacity="0.5" letter-spacing="0.5">SAVINGS RATE</text>
+  <text x="116" y="408" font-family="Georgia, serif" font-size="16" fill="#E07A5F" font-weight="700">24%</text>
+
+  <text x="302" y="388" font-family="Georgia" font-size="8" fill="#92400E" opacity="0.5" letter-spacing="0.5">FIRE TIMELINE</text>
+  <text x="302" y="408" font-family="Georgia, serif" font-size="16" fill="#F59E0B" font-weight="700">12 yrs</text>
+
+  <text x="488" y="388" font-family="Georgia" font-size="8" fill="#92400E" opacity="0.5" letter-spacing="0.5">TOP MERCHANT</text>
+  <text x="488" y="408" font-family="Georgia, serif" font-size="14" fill="#D97706" font-weight="700">Whole Foods</text>
+</svg>

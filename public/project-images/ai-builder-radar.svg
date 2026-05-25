@@ -1,0 +1,110 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-ab" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDE68A"/>
+      <stop offset="40%" stop-color="#FDBA74"/>
+      <stop offset="80%" stop-color="#FDA4AF"/>
+      <stop offset="100%" stop-color="#E07A5F"/>
+    </linearGradient>
+    <linearGradient id="card-ab" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFDF7" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#FEF9EE" stop-opacity="0.90"/>
+    </linearGradient>
+    <filter id="shadow-ab">
+      <feDropShadow dx="0" dy="8" stdDeviation="20" flood-color="#92400E" flood-opacity="0.10"/>
+    </filter>
+    <radialGradient id="radar-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E07A5F" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#E07A5F" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bg-ab)"/>
+
+  <!-- Background radar glow (left) -->
+  <circle cx="200" cy="260" r="200" fill="url(#radar-glow)"/>
+
+  <!-- Radar arcs (left side, decorative) -->
+  <circle cx="200" cy="260" r="60"  fill="none" stroke="#92400E" stroke-width="1" opacity="0.10"/>
+  <circle cx="200" cy="260" r="100" fill="none" stroke="#92400E" stroke-width="1" opacity="0.09"/>
+  <circle cx="200" cy="260" r="145" fill="none" stroke="#92400E" stroke-width="1" opacity="0.07"/>
+  <circle cx="200" cy="260" r="192" fill="none" stroke="#92400E" stroke-width="1" opacity="0.05"/>
+
+  <!-- Radar sweep line -->
+  <line x1="200" y1="260" x2="315" y2="130" stroke="#E07A5F" stroke-width="1.5" opacity="0.25"/>
+  <!-- Signal nodes on radar -->
+  <circle cx="260" cy="200" r="6" fill="#E07A5F" opacity="0.7"/>
+  <circle cx="260" cy="200" r="12" fill="#E07A5F" opacity="0.15"/>
+  <circle cx="295" cy="175" r="4" fill="#F59E0B" opacity="0.65"/>
+  <circle cx="295" cy="175" r="9" fill="#F59E0B" opacity="0.12"/>
+  <circle cx="230" cy="155" r="5" fill="#E07A5F" opacity="0.6"/>
+  <circle cx="145" cy="190" r="4" fill="#FDBA74" opacity="0.7"/>
+  <circle cx="175" cy="320" r="5" fill="#F59E0B" opacity="0.55"/>
+  <!-- Center dot -->
+  <circle cx="200" cy="260" r="5" fill="#92400E" opacity="0.5"/>
+  <circle cx="200" cy="260" r="2.5" fill="#92400E" opacity="0.8"/>
+
+  <!-- Main email digest card -->
+  <rect x="310" y="55" width="430" height="390" rx="18" fill="url(#card-ab)" filter="url(#shadow-ab)"/>
+
+  <!-- Card header bar -->
+  <rect x="310" y="55" width="430" height="62" rx="18" fill="#FEF9EE" opacity="0.98"/>
+  <rect x="310" y="95" width="430" height="22" fill="#FEF9EE" opacity="0.98"/>
+
+  <!-- Header content -->
+  <circle cx="338" cy="84" r="10" fill="#E07A5F" opacity="0.8"/>
+  <text x="355" y="80" font-family="Georgia, serif" font-size="13" fill="#1a1a1a" font-weight="700">AI Builder Radar</text>
+  <text x="355" y="95" font-family="Georgia" font-size="9" fill="#92400E" opacity="0.5">Daily digest · March 14</text>
+  <!-- Unread dot -->
+  <circle cx="710" cy="80" r="5" fill="#E07A5F"/>
+
+  <!-- Divider -->
+  <line x1="330" y1="119" x2="720" y2="119" stroke="#E8D5C0" stroke-width="1"/>
+
+  <!-- Section: New products -->
+  <text x="330" y="142" font-family="Georgia" font-size="9" fill="#E07A5F" letter-spacing="1.2" font-weight="600">NEW PRODUCTS WORTH WATCHING</text>
+
+  <!-- Product item 1 -->
+  <rect x="330" y="150" width="380" height="50" rx="8" fill="#FEF3C7" opacity="0.6"/>
+  <circle cx="348" cy="175" r="10" fill="#F59E0B" opacity="0.35"/>
+  <rect x="364" y="163" width="180" height="9" rx="4.5" fill="#92400E" opacity="0.35"/>
+  <rect x="364" y="178" width="280" height="7" rx="3.5" fill="#92400E" opacity="0.18"/>
+  <rect x="364" y="190" width="220" height="7" rx="3.5" fill="#92400E" opacity="0.14"/>
+
+  <!-- Product item 2 -->
+  <rect x="330" y="208" width="380" height="50" rx="8" fill="#FEF3C7" opacity="0.5"/>
+  <circle cx="348" cy="233" r="10" fill="#E07A5F" opacity="0.3"/>
+  <rect x="364" y="221" width="150" height="9" rx="4.5" fill="#92400E" opacity="0.3"/>
+  <rect x="364" y="236" width="260" height="7" rx="3.5" fill="#92400E" opacity="0.16"/>
+  <rect x="364" y="248" width="200" height="7" rx="3.5" fill="#92400E" opacity="0.12"/>
+
+  <!-- Product item 3 -->
+  <rect x="330" y="266" width="380" height="50" rx="8" fill="#FEF3C7" opacity="0.4"/>
+  <circle cx="348" cy="291" r="10" fill="#FDBA74" opacity="0.5"/>
+  <rect x="364" y="279" width="200" height="9" rx="4.5" fill="#92400E" opacity="0.28"/>
+  <rect x="364" y="294" width="240" height="7" rx="3.5" fill="#92400E" opacity="0.15"/>
+  <rect x="364" y="306" width="180" height="7" rx="3.5" fill="#92400E" opacity="0.11"/>
+
+  <!-- Divider -->
+  <line x1="330" y1="328" x2="720" y2="328" stroke="#E8D5C0" stroke-width="1"/>
+
+  <!-- Section: Signals & Trends -->
+  <text x="330" y="350" font-family="Georgia" font-size="9" fill="#F59E0B" letter-spacing="1.2" font-weight="600">SIGNALS &amp; TRENDS</text>
+  <rect x="330" y="358" width="370" height="8" rx="4" fill="#92400E" opacity="0.18"/>
+  <rect x="330" y="372" width="340" height="8" rx="4" fill="#92400E" opacity="0.14"/>
+  <rect x="330" y="386" width="200" height="8" rx="4" fill="#92400E" opacity="0.10"/>
+
+  <!-- Footer -->
+  <line x1="330" y1="408" x2="720" y2="408" stroke="#E8D5C0" stroke-width="1"/>
+  <rect x="330" y="418" width="80" height="18" rx="9" fill="#E07A5F" opacity="0.2"/>
+  <text x="370" y="431" font-family="Georgia" font-size="9" fill="#E07A5F" text-anchor="middle" opacity="0.9">View all →</text>
+  <rect x="420" y="418" width="70" height="18" rx="9" fill="#92400E" opacity="0.08"/>
+  <text x="455" y="431" font-family="Georgia" font-size="9" fill="#92400E" text-anchor="middle" opacity="0.6">Archive</text>
+
+  <!-- Floating signal dots outside card -->
+  <circle cx="74" cy="68" r="5" fill="#F59E0B" opacity="0.3"/>
+  <circle cx="56" cy="90" r="3" fill="#E07A5F" opacity="0.25"/>
+  <circle cx="270" cy="440" r="6" fill="#FDBA74" opacity="0.3"/>
+  <circle cx="248" cy="420" r="4" fill="#92400E" opacity="0.15"/>
+</svg>

@@ -1,0 +1,14 @@
+/** About page narrative — paragraph breaks for readability */
+export const aboutParagraphs: string[] = [
+  "I grew up in a small town in China, built around one of the country's largest petroleum bases. Three generations of my family worked in science and engineering there. It was a place with a particular kind of intelligence: practical, unglamorous, proud of what your hands could do.",
+  "I think a lot of who I am comes from that.",
+  "Growing up, I didn't have connections to lean on or a clear path laid out for me. What I had was a quiet, persistent belief that I could build something different if I worked hard enough. Engineering felt like the right place to start. Then I left for the United States for graduate school, and chose Boston in a way that felt less like a decision and more like a pull. The city has a weight to it, old universities, older neighborhoods, the kind of streets that make you feel like the past is still present.",
+  "I moved from data science and AI into product management, where I've felt most like myself. I like being in the middle of complicated, unresolved problems, the kind where the goal itself is still being argued over. I'm good at finding the shape of things when everything feels unclear, and at caring enough about the details that the final product actually feels like it was made for someone.",
+  "I'm a sprinter, on the track and in my work. There's something about rallying a team around a hard goal, moving fast together, and actually pulling it off that I find deeply satisfying. Tight timelines and high stakes tend to bring out the best in me.",
+  "I've spent my career building AI products, across consumer robotics, e-commerce, healthcare, and cloud infrastructure. I feel genuinely lucky that AI has been part of my path for so many years. It's a field I entered early, kept growing with, and still feel excited to keep learning from.",
+  "Outside of work, my inner world is probably less STEM than my resume looks. I love literature, history, anthropology, politics, geography. I travel whenever I can, mostly to Europe, and I can never quite treat a place as just a place. I want to know what happened there, who fought over it, what they wrote, what they left behind. Old cities feel like ongoing arguments to me. I find that comforting.",
+  "The more I read and travel, the more I think everything is connected, history into politics into culture into the small daily choices that eventually become civilization. That probably sounds like too much. It makes me happy anyway.",
+  "I feel lucky that technology is my career and everything else gets to stay personal. I don't know what would have happened to my love of literature if I'd made it my job. It's still a place I return to freely, and I'd like to keep it that way.",
+];
+
+export const aboutClosing = "Glad you're here.";

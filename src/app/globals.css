@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #FAFAF7;
+  --foreground: #1a1a1a;
+  --accent: #E07A5F;
+  --accent-light: #F2A68E;
+  --accent-muted: #F5E6E0;
+  --border: #E8E8E2;
+  --muted: #6B6B6B;
+  --card-bg: #FFFFFF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-accent-muted: var(--accent-muted);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-card-bg: var(--card-bg);
+}
+
+html {
+  font-size: 17px;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'DM Serif Display', serif;
+}
+
+.font-serif {
+  font-family: 'DM Serif Display', serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Prose styles for article pages */
+.prose-custom {
+  line-height: 1.8;
+  font-size: 1.0625rem;
+}
+
+.prose-custom p {
+  margin-bottom: 1.5rem;
+  color: #2d2d2d;
+}
+
+.prose-custom h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.prose-custom h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: #1a1a1a;
+}
+
+.prose-custom blockquote {
+  border-left: 3px solid #E07A5F;
+  padding-left: 1.25rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #4a4a4a;
+}
+
+.prose-custom a {
+  color: #E07A5F;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-custom a:hover {
+  opacity: 0.8;
+}
+
+/* Chinese article prose */
+.prose-zh {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.0625rem;
+  line-height: 2;
+  letter-spacing: 0.02em;
+  color: #2d2d2d;
+  font-weight: 300;
+}
+
+.prose-zh p {
+  margin-bottom: 1.75rem;
+}
+
+.prose-zh h2 {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+}
+
+.prose-zh blockquote {
+  border-left: 3px solid #E07A5F;
+  padding-left: 1.25rem;
+  margin: 2rem 0;
+  color: #4a4a4a;
+  font-style: normal;
+  letter-spacing: 0.03em;
+}
+
+.title-zh {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+
+/* About page narrative */
+.about-narrative {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.about-narrative__p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.85;
+  color: #2d2d2d;
+  margin: 0 0 1.75rem;
+}
+
+.about-narrative__p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-narrative__pull {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.35rem;
+  line-height: 1.55;
+  font-style: italic;
+  color: #92400e;
+  text-align: center;
+  margin: 2.25rem 0 2.5rem;
+  padding: 0 1rem;
+}
+
+.about-narrative__closing {
+  font-family: "DM Serif Display", serif;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: #1a1a1a;
+  margin: 2.75rem 0 0;
+  padding-top: 2rem;
+  border-top: 1px solid #e8e8e2;
+}
+
+/* City guide character animations */
+@keyframes guide-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+@keyframes guide-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+@keyframes guide-bubble-in {
+  from { opacity: 0; transform: scale(0.92) translateY(6px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.guide-float { animation: guide-float 3s ease-in-out infinite; }
+.guide-bubble-in { animation: guide-bubble-in 0.2s ease-out forwards; }
