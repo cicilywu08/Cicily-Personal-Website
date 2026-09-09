@@ -28,7 +28,7 @@ export const cityPicks: CityPick[] = [
     gradient: "linear-gradient(135deg, #FECDD3 0%, #FDBA74 100%)",
     audioSrc: "/audio/buenos-aires.m4a",
     guideScript: [
-      "Okay so — Buenos Aires. Where do I even start.",
+      "Okay so, Buenos Aires. Where do I even start.",
       "First thing you need to know: this city does not wake up until midnight. Literally. We rolled out for dinner at 10pm and the restaurant was still filling up.",
       "But that steak at Don Julio? I am still thinking about it. Order the bife de chorizo. Don't overthink it.",
       "El Ateneo is one of those places that sounds touristy but genuinely stops you in your tracks. It's a theatre. That became a bookstore. You get coffee on the old stage. Just go.",
@@ -68,20 +68,20 @@ export const cityPicks: CityPick[] = [
     city: "Montevideo",
     country: "Uruguay",
     tagline: "quiet, coastal, and quietly perfect",
-    openingLine: "The kind of city that doesn't try to impress you — and somehow does.",
+    openingLine: "The kind of city that doesn't try to impress you. And somehow does.",
     gradient: "linear-gradient(135deg, #D1FAE5 0%, #6EE7B7 100%)",
     guideScript: [
       "Everyone skips Montevideo for Buenos Aires. That is exactly why I love it.",
       "It's quieter. Slower. And somehow more itself. The kind of city that doesn't perform for you.",
-      "I had the best morning of the whole trip at Wild Bakery — just bread, coffee, a window seat. No plans. That was enough.",
+      "I had the best morning of the whole trip at Wild Bakery: just bread, coffee, a window seat. No plans. That was enough.",
       "IKIGAI was a surprise. Japanese-Peruvian in Uruguay? Somehow it works perfectly. The ceviche was one of the best things I ate on the whole trip.",
-      "And the Mercado Agrícola — walk through the whole thing before you sit down anywhere. You'll know what you want by the time you've seen it all.",
+      "And the Mercado Agrícola: walk through the whole thing before you sit down anywhere. You'll know what you want by the time you've seen it all.",
     ],
     eats: [
       {
         name: "IKIGAI Nikkei",
         category: "Japanese-Peruvian",
-        note: "Unexpected and wonderful. The ceviches are delicate and bright — not what you'd expect in Uruguay.",
+        note: "Unexpected and wonderful. The ceviches are delicate and bright, not what you'd expect in Uruguay.",
         mapsUrl: "https://www.google.com/maps/place/IKIGAI+Nikkei/data=!4m2!3m1!1s0x959f814b0886b1fd:0x88a9b28893341e7e",
       },
       {
@@ -101,7 +101,7 @@ export const cityPicks: CityPick[] = [
       {
         name: "Solís Theater",
         category: "Theatre / Architecture",
-        note: "If there's a show on, go. If not, peek inside anyway — the interior alone is worth the detour.",
+        note: "If there's a show on, go. If not, peek inside anyway; the interior alone is worth the detour.",
         mapsUrl: "https://www.google.com/maps/place/Solis+Theater/data=!4m2!3m1!1s0x959f802adf27edcb:0xe9cdb804f35a1e8a",
       },
     ],
@@ -116,7 +116,7 @@ export const cityPicks: CityPick[] = [
     guideScript: [
       "The heat hits you immediately. Like a warm wall you walk straight into.",
       "And then you just... surrender to it. That's the only way to do Cartagena.",
-      "Walk the old city at golden hour. Stop at Ábaco for a coffee — books everywhere, ceiling fans turning slowly, completely unhurried. That's the afternoon right there.",
+      "Walk the old city at golden hour. Stop at Ábaco for a coffee: books everywhere, ceiling fans turning slowly, completely unhurried. That's the afternoon right there.",
       "Candé for lunch. 100% local, unpretentious, exactly what the city actually tastes like. Don't go to the tourist spots first.",
       "Then at night, Café Havana. Cold drink, warm air, music from somewhere. It's a classic for good reason.",
     ],
@@ -160,8 +160,8 @@ export const cityPicks: CityPick[] = [
       "I did not expect to love Medellín this much. Nobody warned me.",
       "The weather is genuinely perfect every single day. Like, suspiciously perfect. 72°F and sunny. Always.",
       "The coffee at Pergamino is world-class. I'm not exaggerating. Order the filter, find a seat, stay two hours.",
-      "Mondongo's — the mondongo is the point. Order it even if you're not sure. Especially if you're not sure.",
-      "And then — go to Comuna 13. With a guide. Let them tell the story. It is not a tourist attraction. It's a neighborhood that rebuilt itself from scratch, and the murals are proof of that.",
+      "Mondongo's: the mondongo is the point. Order it even if you're not sure. Especially if you're not sure.",
+      "And then go to Comuna 13. With a guide. Let them tell the story. It is not a tourist attraction. It's a neighborhood that rebuilt itself from scratch, and the murals are proof of that.",
     ],
     eats: [
       {
@@ -202,7 +202,7 @@ export const cityPicks: CityPick[] = [
     guideScript: [
       "Go off-season. I cannot stress this enough.",
       "In summer it's packed with the wrong kind of energy. Off-season, the city exhales. You can actually hear it.",
-      "Muelle 3 — right on the port, order whatever came in that morning. Don't look at the menu too hard, just ask.",
+      "Muelle 3: right on the port, order whatever came in that morning. Don't look at the menu too hard, just ask.",
       "And then after dinner: walk the port, get ice cream at Arlecchino. That's the whole evening right there.",
       "Casapueblo at sunset is one of those things that feels almost too perfect to be real. White sculptural house on a cliff above the sea. Go. No exceptions.",
     ],

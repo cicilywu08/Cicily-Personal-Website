@@ -129,7 +129,7 @@ export default function StoryBody({ body, bodyEn, lang, title, location, readTim
             </button>
             {error && (
               <span className="text-xs" style={{ color: "#C05A3F", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                Translation failed — try again
+                Translation failed. Try again.
               </span>
             )}
           </div>

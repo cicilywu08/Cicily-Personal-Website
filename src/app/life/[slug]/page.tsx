@@ -15,9 +15,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const story = getStoryBySlug(slug);
-  if (!story) return { title: "Story — Cicily" };
+  if (!story) return { title: "Story | Cicily" };
   return {
-    title: `${story.title} — Cicily`,
+    title: `${story.title} | Cicily`,
     description: story.excerpt,
   };
 }

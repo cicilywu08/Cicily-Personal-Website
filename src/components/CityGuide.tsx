@@ -165,7 +165,7 @@ export default function CityGuide({
                     className="text-sm leading-relaxed mb-4 pr-4"
                     style={{ color: "#3a2a24", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
                   >
-                    psst — I left you a little voice note about this city 🎙
+                    psst, I left you a little voice note about this city 🎙
                     <br />
                     <span style={{ color: "#AAAAAA" }}>(put in your earphones if you&apos;re somewhere quiet!)</span>
                   </p>
@@ -203,7 +203,7 @@ export default function CityGuide({
                   )}
                   {isDone && (
                     <p className="text-xs" style={{ color: "#AAAAAA", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                      — Cicily
+                      ~ Cicily
                     </p>
                   )}
                 </>
@@ -235,7 +235,7 @@ export default function CityGuide({
               )}
               {isDone && (
                 <p className="mt-2 text-xs" style={{ color: "#AAAAAA", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-                  — Cicily
+                  ~ Cicily
                 </p>
               )}
             </div>

@@ -4,7 +4,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { currentProjects } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Projects — Cicily",
+  title: "Projects | Cicily",
   description: "Things Cicily is actively building and thinking about.",
 };
 

@@ -2,9 +2,21 @@
 
 import { useState, useEffect } from "react";
 
+const CONTACT_EMAIL = "cwuxiaoto@gmail.com";
+
+function EnvelopeIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+    </svg>
+  );
+}
+
 export default function LetterModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [content, setContent] = useState("");
+  const [sent, setSent] = useState(false);
 
   // Format today's date like: March 13, 2026
   const today = new Date().toLocaleDateString("en-US", {
@@ -30,19 +42,33 @@ export default function LetterModal() {
     return () => document.removeEventListener("keydown", handler);
   }, []);
 
+  function handleClose() {
+    setIsOpen(false);
+    setTimeout(() => { setContent(""); setSent(false); }, 300);
+  }
+
+  function handleSend() {
+    if (content.trim().length === 0) return;
+    const subject = encodeURIComponent("Hello from your website");
+    const body = encodeURIComponent(content);
+    window.open(`mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`);
+    setSent(true);
+  }
+
   return (
     <>
       {/* Trigger button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-semibold transition-all hover:opacity-90 hover:scale-[1.02]"
+        className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-medium transition-all hover:opacity-85 hover:scale-[1.02]"
         style={{
           backgroundColor: "#E07A5F",
           color: "#FFFFFF",
           fontFamily: "'Plus Jakarta Sans', sans-serif",
+          letterSpacing: "0.01em",
         }}
       >
-        Write me a letter ✉
+        Write me a letter <EnvelopeIcon />
       </button>
 
       {/* Backdrop */}
@@ -50,7 +76,7 @@ export default function LetterModal() {
         <div
           className="fixed inset-0 z-50 flex items-center justify-center px-4"
           style={{ backgroundColor: "rgba(20, 12, 8, 0.55)", backdropFilter: "blur(4px)" }}
-          onClick={(e) => { if (e.target === e.currentTarget) setIsOpen(false); }}
+          onClick={(e) => { if (e.target === e.currentTarget) handleClose(); }}
         >
           {/* Letter paper */}
           <div
@@ -70,7 +96,7 @@ export default function LetterModal() {
             >
               {/* Close */}
               <button
-                onClick={() => setIsOpen(false)}
+                onClick={handleClose}
                 className="absolute top-5 right-6 text-xl leading-none transition-opacity hover:opacity-40"
                 style={{ color: "#B0A89E" }}
                 aria-label="Close"
@@ -126,7 +152,7 @@ export default function LetterModal() {
               <textarea
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                placeholder="Write whatever you'd like — a hello, a thought, a question, something you've been meaning to say..."
+                placeholder="Write whatever you'd like: a hello, a thought, a question, something you've been meaning to say..."
                 autoFocus
                 rows={9}
                 className="w-full resize-none outline-none"
@@ -159,22 +185,37 @@ export default function LetterModal() {
                 className="text-xs italic"
                 style={{ color: "#C0B8B0", fontFamily: "'DM Serif Display', serif" }}
               >
-                {content.length === 0 ? "Take your time." : `${content.length} characters`}
+                {sent ? "Sent. Thank you." : content.length === 0 ? "Take your time." : `${content.length} characters`}
               </p>
 
-              <button
-                disabled={content.trim().length === 0}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all"
-                style={{
-                  backgroundColor: content.trim().length > 0 ? "#E07A5F" : "#E8E3DA",
-                  color: content.trim().length > 0 ? "#fff" : "#B0A89E",
-                  fontFamily: "'Plus Jakarta Sans', sans-serif",
-                  cursor: content.trim().length > 0 ? "pointer" : "default",
-                  transition: "all 0.2s ease",
-                }}
-              >
-                Send this letter ✉
-              </button>
+              {sent ? (
+                <button
+                  onClick={handleClose}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:opacity-80"
+                  style={{
+                    backgroundColor: "#E8E3DA",
+                    color: "#6B6B6B",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  }}
+                >
+                  Close
+                </button>
+              ) : (
+                <button
+                  onClick={handleSend}
+                  disabled={content.trim().length === 0}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:opacity-85"
+                  style={{
+                    backgroundColor: content.trim().length > 0 ? "#E07A5F" : "#E8E3DA",
+                    color: content.trim().length > 0 ? "#fff" : "#B0A89E",
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    cursor: content.trim().length > 0 ? "pointer" : "default",
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  Send this letter <EnvelopeIcon />
+                </button>
+              )}
             </div>
           </div>
         </div>

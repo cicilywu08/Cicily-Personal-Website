@@ -15,9 +15,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = getArchiveBySlug(slug);
-  if (!project) return { title: "Archive — Cicily" };
+  if (!project) return { title: "Archive | Cicily" };
   return {
-    title: `${project.title} — Cicily`,
+    title: `${project.title} | Cicily`,
     description: project.description,
   };
 }
@@ -31,96 +31,103 @@ export default async function ArchiveDetailPage({ params }: Props) {
 
   return (
     <div>
+      {/* ── Gradient header ───────────────────────────────── */}
       <section
-        className="relative w-full overflow-hidden"
+        className="w-full"
         style={{
           background:
             "linear-gradient(150deg, #FCD34D 0%, #FDBA74 28%, #FECDD3 55%, #FAFAF7 100%)",
         }}
       >
-        <div className="relative max-w-3xl mx-auto px-6 pt-16 pb-12">
+        <div className="max-w-4xl mx-auto px-6 pt-10 pb-14 md:pt-14 md:pb-16">
           <Link
             href="/archive"
-            className="inline-flex items-center gap-1 text-sm font-semibold mb-8 transition-opacity hover:opacity-70"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold mb-10 transition-opacity hover:opacity-60"
             style={{ color: "#92400E", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
           >
             ← Archive
           </Link>
 
-          {project.imageUrl && (
-            <div className="rounded-2xl overflow-hidden mb-8 shadow-md aspect-video flex items-center justify-center bg-gradient-to-br from-teal-200 via-cyan-200 to-sky-200">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={project.imageUrl}
-                alt={project.title}
-                className="w-[88%] h-[80%] object-cover rounded-xl shadow-sm"
-              />
-            </div>
-          )}
-
-          <div className="flex flex-wrap items-center gap-3 mb-4">
-            <span
-              className="text-sm font-semibold px-3 py-1 rounded-full"
-              style={{
-                backgroundColor: "#F5E6E0",
-                color: "#C05A3F",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-              }}
-            >
-              {project.category}
-            </span>
-            <span
-              className="text-sm"
-              style={{ color: "#6B6B6B", fontFamily: "'Plus Jakarta Sans', sans-serif" }}
-            >
-              {project.year}
-            </span>
-          </div>
-
-          <h1
-            className="text-4xl md:text-5xl font-semibold leading-tight"
-            style={{ fontFamily: "'DM Serif Display', serif", color: "#1a1a1a" }}
-          >
-            {project.title}
-          </h1>
-        </div>
-      </section>
-
-      <section className="max-w-3xl mx-auto px-6 pb-20 -mt-4">
-        <div
-          className="rounded-2xl p-8 md:p-10 shadow-md"
-          style={{ backgroundColor: "#FFFFFF" }}
-        >
-          <p
-            className="text-lg leading-relaxed mb-8 pb-8"
-            style={{
-              color: "#4a4a4a",
-              fontFamily: "'Plus Jakarta Sans', sans-serif",
-              borderBottom: "1px solid #E8E8E2",
-            }}
-          >
-            {project.description}
-          </p>
-
-          <ProseHtml html={bodyHtml} />
-
-          <div className="flex flex-wrap gap-2 mt-10 pt-8" style={{ borderTop: "1px solid #E8E8E2" }}>
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-xs font-medium px-2.5 py-1 rounded-full"
+          <div className="flex items-start gap-10 md:gap-16">
+            {/* Left: meta + title + description + tags */}
+            <div className="flex-1 min-w-0">
+              <p
+                className="text-sm font-semibold tracking-widest uppercase mb-3"
                 style={{
-                  backgroundColor: "#F5E6E0",
-                  color: "#C05A3F",
+                  color: "#92400E",
+                  opacity: 0.65,
                   fontFamily: "'Plus Jakarta Sans', sans-serif",
                 }}
               >
-                {tag}
-              </span>
-            ))}
+                {project.year}{project.category ? ` · ${project.category}` : ""}
+              </p>
+
+              <h1
+                className="text-4xl md:text-5xl font-semibold leading-[1.1] mb-5"
+                style={{ fontFamily: "'DM Serif Display', serif", color: "#1a1a1a" }}
+              >
+                {project.title}
+              </h1>
+
+              <p
+                className="text-base md:text-lg leading-relaxed mb-7"
+                style={{
+                  color: "#3a2a24",
+                  opacity: 0.82,
+                  fontFamily: "'Plus Jakarta Sans', sans-serif",
+                  maxWidth: "36rem",
+                }}
+              >
+                {project.description}
+              </p>
+
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs font-semibold px-3 py-1.5 rounded-full"
+                    style={{
+                      backgroundColor: "rgba(255,255,255,0.55)",
+                      color: "#92400E",
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: frosted glass image card */}
+            {project.imageUrl && (
+              <div
+                className="hidden md:flex shrink-0 items-center justify-center rounded-3xl overflow-hidden"
+                style={{
+                  width: 172,
+                  height: 172,
+                  background: "rgba(255,255,255,0.52)",
+                  backdropFilter: "blur(12px)",
+                  boxShadow:
+                    "0 4px 24px rgba(146,64,14,0.10), 0 1px 4px rgba(146,64,14,0.06)",
+                  border: "1px solid rgba(255,255,255,0.7)",
+                }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
+
+      {/* ── Body prose ───────────────────────────────────── */}
+      <div className="max-w-2xl mx-auto px-6 pt-12 pb-16 md:pt-14 md:pb-20">
+        <ProseHtml html={bodyHtml} />
+      </div>
     </div>
   );
 }

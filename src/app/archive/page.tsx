@@ -4,7 +4,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { archivedProjects } from "@/data/projects";
 
 export const metadata: Metadata = {
-  title: "Archive — Cicily",
+  title: "Archive | Cicily",
   description: "Earlier data science and machine learning projects.",
 };
 

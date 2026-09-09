@@ -48,6 +48,12 @@ export default function HeartWidget() {
     } catch {}
   }
 
+  const hint = isFull
+    ? "thank you ♡"
+    : userClicks === 0
+    ? "leave some love"
+    : `${MAX_CLICKS - userClicks} left`;
+
   return (
     <>
       <style>{`
@@ -63,31 +69,37 @@ export default function HeartWidget() {
         }
         @keyframes h-float {
           0%   { opacity: 1; transform: translateX(-50%) translateY(0); }
-          100% { opacity: 0; transform: translateX(-50%) translateY(-16px); }
+          100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
         }
       `}</style>
 
-      <div className="mt-8 inline-flex items-center gap-2.5">
-        {/* Heart */}
-        <button
-          onClick={handleClick}
-          disabled={isFull}
-          aria-label="Give some love"
-          style={{
-            background: "none", border: "none", padding: 0,
-            cursor: isFull ? "default" : "pointer",
-            position: "relative", flexShrink: 0,
-          }}
-        >
+      {/* Pill container — mirrors the LetterModal button's height/shape */}
+      <button
+        onClick={handleClick}
+        disabled={isFull}
+        aria-label="Give some love"
+        className="inline-flex items-center gap-2.5 px-5 py-3 rounded-full transition-all"
+        style={{
+          border: `1.5px solid ${isFull ? "#E07A5F" : "#E8E8E2"}`,
+          backgroundColor: isFull ? "#FFF0EB" : "transparent",
+          cursor: isFull ? "default" : "pointer",
+          fontFamily: "'Plus Jakarta Sans', sans-serif",
+          transition: "border-color 0.4s, background-color 0.4s",
+        }}
+      >
+        {/* Heart SVG */}
+        <span style={{ position: "relative", flexShrink: 0, display: "flex" }}>
           <svg
-            width="36"
-            height="36"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             style={{
               display: "block",
-              animation: isPumping ? "h-pump 0.25s cubic-bezier(0.34,1.56,0.64,1) both" : "none",
-              filter: isFull ? "drop-shadow(0 0 5px rgba(224,122,95,0.5))" : "none",
-              transition: "filter 1s ease",
+              animation: isPumping
+                ? "h-pump 0.25s cubic-bezier(0.34,1.56,0.64,1) both"
+                : "none",
+              filter: isFull ? "drop-shadow(0 0 4px rgba(224,122,95,0.5))" : "none",
+              transition: "filter 0.8s ease",
             }}
           >
             <defs>
@@ -101,59 +113,86 @@ export default function HeartWidget() {
             </defs>
             <path d={HEART_PATH} fill="rgba(224,122,95,0.12)" />
             <g clipPath="url(#h-clip)">
-              <g style={{ transform: `translateY(${translateY}px)`, transition: "transform 0.4s cubic-bezier(0.34,1.56,0.64,1)" }}>
+              <g
+                style={{
+                  transform: `translateY(${translateY}px)`,
+                  transition: "transform 0.4s cubic-bezier(0.34,1.56,0.64,1)",
+                }}
+              >
                 <rect
-                  x={-3} y={HEART_TOP} width={30} height={HEART_HEIGHT + 3}
+                  x={-3}
+                  y={HEART_TOP}
+                  width={30}
+                  height={HEART_HEIGHT + 3}
                   fill="url(#h-grad)"
                   style={{
-                    transformBox: "fill-box", transformOrigin: "center",
-                    animation: userClicks > 0 && !isFull ? "h-slosh 3s ease-in-out infinite" : "none",
+                    transformBox: "fill-box",
+                    transformOrigin: "center",
+                    animation:
+                      userClicks > 0 && !isFull
+                        ? "h-slosh 3s ease-in-out infinite"
+                        : "none",
                   }}
                 />
               </g>
             </g>
-            <path d={HEART_PATH} fill="none" stroke="#E07A5F" strokeWidth="0.6" opacity={0.6} />
+            <path
+              d={HEART_PATH}
+              fill="none"
+              stroke="#E07A5F"
+              strokeWidth="0.6"
+              opacity={0.55}
+            />
           </svg>
 
           {popKey > 0 && (
             <span
               key={popKey}
               style={{
-                position: "absolute", top: 0, left: "50%",
-                fontFamily: "'Plus Jakarta Sans', sans-serif",
-                fontSize: "9px", fontWeight: 700, color: "#E07A5F",
+                position: "absolute",
+                top: -2,
+                left: "50%",
+                fontSize: "9px",
+                fontWeight: 700,
+                color: "#E07A5F",
                 animation: "h-float 0.6s ease-out forwards",
-                pointerEvents: "none", userSelect: "none",
+                pointerEvents: "none",
+                userSelect: "none",
               }}
             >
               +1
             </span>
           )}
-        </button>
+        </span>
 
         {/* Count */}
         <span
           style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontSize: "0.8rem",
-            color: isFull ? "#E07A5F" : "#6B6B6B",
+            fontSize: "0.875rem",
+            fontWeight: 600,
+            color: isFull ? "#E07A5F" : "#1a1a1a",
             transition: "color 0.4s",
+            lineHeight: 1,
           }}
         >
-          {totalLikes !== null ? totalLikes.toLocaleString() : "—"}
+          {totalLikes !== null ? totalLikes.toLocaleString() : "·"}
         </span>
 
-        {/* Subtle hint */}
+        {/* Separator dot */}
+        <span style={{ color: "#D0D0CA", fontSize: "0.75rem", lineHeight: 1 }}>·</span>
+
+        {/* Hint */}
         <span
           style={{
-            fontFamily: "'Plus Jakarta Sans', sans-serif",
-            fontSize: "0.7rem",
-            color: "#C8C8C2",
+            fontSize: "0.8rem",
+            color: isFull ? "#E07A5F" : "#9B9B95",
+            transition: "color 0.4s",
+            lineHeight: 1,
           }}
         >
-          {isFull ? "thank you ♡" : userClicks === 0 ? "leave some love" : `${MAX_CLICKS - userClicks} left`}
+          {hint}
         </span>
-      </div>
+      </button>
     </>
   );
 }

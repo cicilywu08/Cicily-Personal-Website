@@ -3,9 +3,9 @@ import Nav from "@/components/Nav";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Cicily — Designer & Builder",
+  title: "Cicily | Designer & Builder",
   description:
-    "Personal website of Cicily — a designer, builder, and curious traveler.",
+    "Personal website of Cicily. Designer, builder, and curious traveler.",
 };
 
 export default function RootLayout({

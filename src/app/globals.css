@@ -62,11 +62,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .prose-custom h2 {
   font-family: 'DM Serif Display', serif;
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-weight: 600;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  margin-top: 2.75rem;
+  margin-bottom: 0.875rem;
   color: #1a1a1a;
+  padding-left: 0.875rem;
+  border-left: 2.5px solid #E07A5F;
 }
 
 .prose-custom h3 {
@@ -155,26 +157,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
 
-.about-narrative__pull {
-  font-family: "DM Serif Display", serif;
-  font-size: 1.35rem;
-  line-height: 1.55;
-  font-style: italic;
-  color: #92400e;
-  text-align: center;
-  margin: 2.25rem 0 2.5rem;
-  padding: 0 1rem;
-}
-
-.about-narrative__closing {
-  font-family: "DM Serif Display", serif;
-  font-size: 1.5rem;
-  line-height: 1.4;
-  color: #1a1a1a;
-  margin: 2.75rem 0 0;
-  padding-top: 2rem;
-  border-top: 1px solid #e8e8e2;
-}
 
 /* City guide character animations */
 @keyframes guide-float {
