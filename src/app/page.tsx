@@ -13,33 +13,73 @@ const featuredStories = stories.filter((s) => s.featured).slice(0, 2);
 export default function Home() {
   return (
     <div>
-      {/* Hero — full-width gradient with layered waves */}
+      {/* Hero — flowing gradient, soft blobs, and drifting waves */}
       <section
-        className="relative w-full overflow-hidden"
+        className="hero-aurora relative w-full overflow-hidden"
         style={{
           background:
-            "linear-gradient(150deg, #FCD34D 0%, #FDBA74 22%, #FDA4AF 50%, #FECDD3 72%, #FAFAF7 100%)",
+            "linear-gradient(150deg, #FCD34D 0%, #FDBA74 22%, #FDA4AF 45%, #FECDD3 68%, #FBCFE8 85%, #FAFAF7 100%)",
         }}
       >
+        {/* Soft drifting color washes behind the headline */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" aria-hidden>
+          <div
+            className="hero-blob hero-blob-a"
+            style={{
+              top: "-12%",
+              right: "8%",
+              width: "42vw",
+              maxWidth: 520,
+              height: "42vw",
+              maxHeight: 520,
+              background: "radial-gradient(circle, rgba(251,113,133,0.55) 0%, rgba(251,113,133,0) 70%)",
+            }}
+          />
+          <div
+            className="hero-blob hero-blob-b"
+            style={{
+              top: "18%",
+              right: "28%",
+              width: "32vw",
+              maxWidth: 380,
+              height: "32vw",
+              maxHeight: 380,
+              background: "radial-gradient(circle, rgba(251,191,36,0.5) 0%, rgba(251,191,36,0) 70%)",
+            }}
+          />
+          <div
+            className="hero-blob hero-blob-c"
+            style={{
+              bottom: "8%",
+              left: "12%",
+              width: "36vw",
+              maxWidth: 440,
+              height: "36vw",
+              maxHeight: 440,
+              background: "radial-gradient(circle, rgba(253,164,175,0.4) 0%, rgba(253,164,175,0) 70%)",
+            }}
+          />
+        </div>
+
         <HeroWaves />
 
-        {/* Decorative scattered dots */}
+        {/* Decorative scattered dots — gentle drift */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden z-[1]">
           {[
-            { top: "18%", left: "62%", size: 10, opacity: 0.30, color: "#F97316" },
-            { top: "32%", left: "70%", size: 7,  opacity: 0.25, color: "#FB7185" },
-            { top: "12%", left: "75%", size: 12, opacity: 0.22, color: "#F59E0B" },
-            { top: "48%", left: "78%", size: 8,  opacity: 0.18, color: "#FB7185" },
-            { top: "22%", left: "85%", size: 6,  opacity: 0.28, color: "#F97316" },
-            { top: "55%", left: "66%", size: 9,  opacity: 0.15, color: "#F59E0B" },
-            { top: "8%",  left: "55%", size: 5,  opacity: 0.22, color: "#FB7185" },
-            { top: "40%", left: "88%", size: 11, opacity: 0.14, color: "#F97316" },
-            { top: "28%", left: "58%", size: 6,  opacity: 0.25, color: "#F59E0B" },
-            { top: "60%", left: "82%", size: 7,  opacity: 0.12, color: "#FB7185" },
+            { top: "18%", left: "62%", size: 10, opacity: 0.30, color: "#F97316", x: "12px", y: "-14px", delay: "0s" },
+            { top: "32%", left: "70%", size: 7,  opacity: 0.25, color: "#FB7185", x: "-10px", y: "8px", delay: "1.2s" },
+            { top: "12%", left: "75%", size: 12, opacity: 0.22, color: "#F59E0B", x: "8px", y: "12px", delay: "0.6s" },
+            { top: "48%", left: "78%", size: 8,  opacity: 0.18, color: "#FB7185", x: "-14px", y: "-6px", delay: "2s" },
+            { top: "22%", left: "85%", size: 6,  opacity: 0.28, color: "#F97316", x: "6px", y: "-10px", delay: "1.5s" },
+            { top: "55%", left: "66%", size: 9,  opacity: 0.15, color: "#F59E0B", x: "-8px", y: "14px", delay: "0.3s" },
+            { top: "8%",  left: "55%", size: 5,  opacity: 0.22, color: "#FB7185", x: "10px", y: "6px", delay: "2.4s" },
+            { top: "40%", left: "88%", size: 11, opacity: 0.14, color: "#F97316", x: "-6px", y: "-12px", delay: "1.8s" },
+            { top: "28%", left: "58%", size: 6,  opacity: 0.25, color: "#F59E0B", x: "14px", y: "4px", delay: "0.9s" },
+            { top: "60%", left: "82%", size: 7,  opacity: 0.12, color: "#FB7185", x: "-12px", y: "10px", delay: "2.8s" },
           ].map((dot, i) => (
             <div
               key={i}
-              className="absolute rounded-sm rotate-45"
+              className="hero-dot absolute rounded-sm"
               style={{
                 top: dot.top,
                 left: dot.left,
@@ -47,6 +87,10 @@ export default function Home() {
                 height: dot.size,
                 backgroundColor: dot.color,
                 opacity: dot.opacity,
+                ["--dot-x" as string]: dot.x,
+                ["--dot-y" as string]: dot.y,
+                animationDelay: dot.delay,
+                animationDuration: `${8 + (i % 4)}s`,
               }}
             />
           ))}
